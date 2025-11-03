@@ -55,7 +55,7 @@ def load_data():
         return df_full_clean, df_viz_pb1_raw, df_annual_change_pct
         
     except FileNotFoundError:
-        st.error("Error: Pastikan file data (data_full_dashboard.csv) ada di folder aplikasi Streamlit.")
+        st.error("Error: Pastikan file data (main_data.csv) ada di folder aplikasi Streamlit.")
         st.stop()
 
 df_full, df_viz_pb1_raw, df_annual_change = load_data()
