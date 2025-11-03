@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 from windrose import WindroseAxes
 
 # =========================================================
@@ -12,8 +13,13 @@ from windrose import WindroseAxes
 @st.cache_data
 def load_data():
     try:
+
+        # Path
+        base_path = os.path.dirname(__file__)
+        file_path = os.path.join(base_path, 'main_data.csv')
+
         df_full_clean = pd.read_csv(
-            './main_data.csv',
+            file_path,
             parse_dates=True,
             infer_datetime_format=True
         )
